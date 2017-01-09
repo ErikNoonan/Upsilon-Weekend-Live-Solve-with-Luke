@@ -2,6 +2,12 @@ $(function(){
   console.log('jQuery is working!!!!!!!!!');
   var totalMonthlySalary = 0;
 
+$('#employeesTable').on('click', 'deleteButton', function(){
+  var salaryToRemoveFromTotal = $(this).parent().prev().text();
+  updateMonthlySalary("-" + salaryToRemoveFromTotal);
+  $(this).parent().parent().remove();
+})
+
   $('#newEmployeeForm').on('submit', function(event){
     event.preventDefault(); // stop the page from reloading and redirecting
     console.log('Form has been submitted!!');
@@ -34,11 +40,14 @@ $(function(){
     $('#newEmployeeForm input[type="text"]').val('');
     $('#newEmployeeForm input[type="number"]').val('');
 
+updateMonthlySalary(newEmployeeObject.salary);
 
-    // With new employee, divide salary by 12, add to current totalMonthlySalary
-    totalMonthlySalary += newEmployeeObject.salary / 12;
-    console.log('totalMonthlySalary is ', totalMonthlySalary);
-
-    $('#monthlySalary').text(totalMonthlySalary.toLocaleString("en-US", { style: 'currency', currency: 'USD' }));
   });
+  function updateMonthlySalary(newEmployeeSalary){
+  // With new employee, divide salary by 12, add to current totalMonthlySalary
+  totalMonthlySalary += newEmployeeObject / 12;
+  console.log('totalMonthlySalary is ', totalMonthlySalary);
+
+  $('#monthlySalary').text(totalMonthlySalary.toLocaleString("en-US", { style: 'currency', currency: 'USD' }));
+}
 });

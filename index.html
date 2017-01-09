@@ -1,74 +1,46 @@
+
 <html>
-
 <head>
-    <title>Luke's Employee Form Calculator Walkthrough</title>
-
-    <script src="jquery.js"></script>
-    <script src="client.js"></script>
-
+  <title>Awesome Employee Form</title>
+  <script src="jquery.js"></script>
+  <script src="client.js"></script>
 </head>
-
 <body>
-    <!-- form section for new employee -->
-    <section>
-        <form id="newEmployeeForm">
-            <input type="text" name="firstName" placeholder="First Name" />
-            <input type="text" name="lastName" placeholder="Last Name" />
-            <input type="text" name="number" placeholder="Employee ID Number" />
-            <input type="text" name="title" placeholder="Title" />
-            <input type="text" name="salary" placeholder="Salary" />
-            <button type="submit" name="newEmployeeButton">Submit</button>
-        </form>
+  <!-- Form section for new employee -->
+  <section>
+    <form id="newEmployeeForm">
+      <input type="text" name="firstName" placeholder="First Name">
+      <input type="text" name="lastName" placeholder="Last Name">
+      <input type="number" name="number" placeholder="Employee ID Number">
+      <input type="text" name="title" placeholder="Title">
+      <input type="number" name="salary" placeholder="Salary">
+      <button type="submit" name="newEmployeeButton">Submit</button>
+    </form>
+  </section>
 
+  <!-- Table of employees list -->
+  <section>
+    <table>
+      <thead>
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Number</th>
+          <th>Title</th>
+          <th>Salary</th>
+        </tr>
+      </thead>
+      <tbody id="employeesTable">
+        <!-- This is where my new rows will go -->
+      </tbody>
+    </table>
+  </section>
 
-    </section>
-    <!--  table of employees list-->
-    <section>
-        <table>
-            <thead>
-                <tr>
-                    <th>
-                        First Name
-                    </th>
-                    <th>
-                        Last Name
-                    </th>
-                    <th>
-                        Number
-                    </th>
-                    <th>
-                        Title
-                    </th>
-                    <th>
-                        Salary
-                    </th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>bob</td>
-                    <td>
-                        The
-                    </td>
-                    <td>
-                        1
-                    </td>
-                    <td>
-                        builder
+  <!-- Salary Total Section -->
+  <section>
+    Monthly Salary Expenditures: <span id="monthlySalary">0</span>
+  </section>
 
-                    </td>
-                    <td>
-                        12
-                    </td>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </section>
-    <!-- salary total section -->
-    <section>
-
-    </section>
 </body>
 
 </html>
